@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Thalia</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <style>
+        body {
+            background-color: #40E0D0; /* Fondo rosado */
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #loginContainer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+        }
+
+        #loginContainer h2 {
+            margin-bottom: 20px;
+        }
+
+        .reveal {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .reveal.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginContainer">
+        <h2>¿Qué canción en quechua siempre quise que cantaras?: wa...</h2>
+        <input type="password" id="password" placeholder="Poner en minúsculas" />
+        <button onclick="checkPassword()">Entrar</button>
+    </div>
+
+    <div class="reveal">
+        <div class="slides">
+            <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)">
+    <h2 style="color:white;">Hola Thalia, imagino que sabes quién soy</h2>
+    <p>Ya van a pasar 7 días después de que todo terminó, supongo que al final no te entendí, es curioso como todo al final quedó en nada, pero estoy agradecido sabes, fueron los días más emocionantes que tuve, siempre quise pertenecer a tu familia, o por lo menos llegar y no esconderme, tal vez ya no sea el hombre que alguna vez fui, supongo que estoy cansado pero este corazón te ha querido incondicionalmente.</p>
+</section>
+            <section data-background-gradient="linear-gradient(to bottom,#17b2c3 , #283b95)">
+                <h2>
+                    Hay algo que quiero decirte
+                </h2>
+No se si al final leeras todo esto pero gracias por mi inicio de año, recuerdas mi primer deseo que era volver a enamorarme, lo hice volvi a sentir esa sensación, a empezar de nuevo como debio haber sido, o como dijiste hagamoslo bien esta vez. Y te preguntarás porque estamos asi entonces, pues no quiero que se vuelva a repetir, me gustaría verte ya donde ya no te involucres mas en lo que fué, dejar el pasado es aprender a superar, vivir el presente es lo que necesitamos, me hubiera gustado ser tu prioridad que sea yo el que llene tu vida y que no me veas como una amenaza, porque enserio quiero eso, quiero que seamos aquello que nunca se va a romper y que al final saldremos adelante.
+            </section>
+            <section data-background="media/patron.jpeg">
+                <h2 style="color:blue;">Te extraño</h2>
+                <p style="color:blue;">
+                    Se que no soy talvez el hombre perfecto pero por ti cualquier cosa podria hacer y también quiero que seas esa persona para mi, la chica de mis sueños, la que se roba mis pensamientos.</p>
+                </section>
+                <section id="fragments" data-background="media/cerro.jpg">
+						<h2>Que debo decir?</h2>
+						<p>Y como esta canción, nada cambiara mi amor por ti y lo sabes, incluso cuando te fuiste queria de todos modos ser parte de ti, rondabas a toda hora, lo siento.</p>
+						<h2 class="fragment">Te quiero</h2>
+						<h2 class="fragment">en mi vida</h2>
+						<h2 class="fragment">en mis sueños</h2>
+						<h2 class="fragment">en mi familia</h2>
+						<h2 class="fragment">en mi nido</hè>
+						
+					</section>
+                <section data-background-video="media/molle.mp4,video.webm">
+                    <h2>Perdón si te pongo en una posición donde talvez solo veas que soy un mal perdedor, yo solo queria quedarme contigo, la razon por la que he estado aqui haz sido tu desde el principio y lo estare hasta el dia que nos vayamos.</h2>
+                </section>
+            <section>
+    <img src="media/f1.jpg" style="display: block; margin: 0 auto;" />
+    <div style="background-color: blue; padding: 20px;">
+        <h2>Y tal vez por última vez</h2>
+        <p>¿Quieres volver en donde se quedó lo nuestro?</p>
+        <div style="margin-top: 20px;">
+            <button onclick="mostrarMensaje()" style="padding: 20px 40px; font-size: 40px;">No</button>
+            <button onclick="window.location.href='https://api.whatsapp.com/send?phone=+51950740401&text=Si,%20volvamos%20a%20empezar,%20intent%C3%A9moslo.'" style="padding: 20px 40px; font-size: 40px;">Sí</button>
+        </div>
+    </div>
+</section>
+        </div>
+    </div>
+
+    <!-- Reproductor de música -->
+    <audio id="musicPlayer" loop>
+        <source src="media/nada.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password === "walicha") {
+                document.getElementById("loginContainer").style.display = "none";
+                document.querySelector(".reveal").classList.add("show");
+                initializeReveal();
+            } else {
+                alert("Contraseña incorrecta. Inténtalo de nuevo.");
+            }
+        }
+
+        function initializeReveal() {
+            Reveal.initialize({
+                hash: true,
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+            });
+            // Reproducir la canción
+            var musicPlayer = document.getElementById("musicPlayer");
+            musicPlayer.play();
+        }
+    </script>
+    <script>
+    function mostrarMensaje() {
+        alert("Supongo que no, gracias");
+    }
+</script>
+</body>
+</html>
